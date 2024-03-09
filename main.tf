@@ -26,6 +26,7 @@ resource "aws_vpc_peering_connection" "requestor" {
   requester {
     allow_remote_vpc_dns_resolution = local.requestor_dns
   }
+  tags = var.tags
 }
 
 // Allow the accepting VPC to associate to the requesting VPC's private zone.

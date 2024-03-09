@@ -37,3 +37,9 @@ variable "auto_accept_peering" {
   description = "Whether or not to automatically accept the peering request from the requestor VPC."
   default     = true
 }
+
+variable "tags" {
+  default     = {}
+  description = "Tags to apply to the peering connection"
+  type        = map(string)
+}
