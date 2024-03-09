@@ -1,4 +1,14 @@
 # One Account
 
-
-https://github.com/rgrizzell/terraform-aws-vpc-peering/blob/<hash>/examples/one_account/main.tf
+```hcl
+module "peer" {
+  #source           = "rgrizzell/vpc-peering/aws"
+  source           = "../../"
+  requestor_vpc_id = aws_vpc.alpha.id
+  acceptor_vpc_id  = aws_vpc.beta.id
+  providers = {
+    aws.requestor = aws
+    aws.acceptor  = aws
+  }
+}
+```
